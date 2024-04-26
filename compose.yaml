@@ -2,13 +2,17 @@ services:
   api:
     build: ./backend
     ports:
-      - "9876:9876"
+      - "127.0.0.1:9876:9876"
+    expose:
+      - 9876
     env_file:
-      - /backend/.env
+      - ./backend/.env
 
   ui:
     build: ./frontend
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
+    expose:
+      - 3000
     depends_on:
       - api

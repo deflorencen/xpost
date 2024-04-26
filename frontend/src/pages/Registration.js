@@ -20,7 +20,7 @@ export default function Registration() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://0.0.0.0:9876/users/register/', formData);
+            const response = await axios.post('http://127.0.0.1:9876/users/register/', formData);
             console.log('Успешно зарегистрирован:', response.data);
         } catch (error) {
             console.error('Ошибка при регистрации:', error);

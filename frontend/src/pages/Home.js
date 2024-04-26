@@ -8,11 +8,11 @@ export default function Home() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const respone = await axios.get("http://0.0.0.0:9876/articles/");
+            const respone = await axios.get("http://127.0.0.1:9876/articles/");
             setPosts(respone.data);
         }
         fetchData();
-    });
+    }, []);
 
     return (
         <div>

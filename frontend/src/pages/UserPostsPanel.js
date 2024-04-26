@@ -8,7 +8,7 @@ export default function UserPostsPanel() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const respone = await axios.get("http://0.0.0.0:9876/articles/by-user/", {
+            const respone = await axios.get("http://127.0.0.1:9876/articles/by-user/", {
                 headers: {
                     Authorization: authHeader
                 }
@@ -16,12 +16,12 @@ export default function UserPostsPanel() {
             setPosts(respone.data);
         }
         fetchData();
-    }, []);
+    }, [authHeader]);
 
 
     const handleDelete = async (postId) => {
         try {
-            const response = await axios.delete(`0.0.0.0:9876/articles/${postId}`, {
+            const response = await axios.delete("http://127.0.0.1:9876/articles/" + postId, {
                 headers: {
                     Authorization: authHeader
                 }
@@ -29,7 +29,6 @@ export default function UserPostsPanel() {
 
             if(response.status === 204){
                 console.log(`Post with id: ${postId} deleted.`)
-                // После успешного удаления поста, обновляем список постов
                 setPosts(posts.filter(post => post.id !== postId));
             }
 

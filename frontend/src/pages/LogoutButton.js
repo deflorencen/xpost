@@ -8,7 +8,7 @@ const LogoutButton = () => {
     const handleLogout = async (e) => {
         
         try {
-            await axios.post("http://0.0.0.0:9876/users/logout/", {},
+            await axios.post("http://127.0.0.1:9876/users/logout/", {},
                 {headers: 
                     {Authorization: authToken}
                 }

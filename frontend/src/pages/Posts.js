@@ -16,7 +16,7 @@ export default function Posts() {
 
     const handleSubmit = async () => {
         try {
-            const response = await axios.post('http://0.0.0.0:9876/articles/', {
+            const response = await axios.post('http://127.0.0.1:9876/articles/', {
                 name: name,
                 content: content
             }, {

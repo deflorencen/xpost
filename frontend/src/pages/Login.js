@@ -22,7 +22,7 @@ export default function Login() {
             const authString = `${formData.email}:${formData.password}`;
             const authHeader = "Basic " + btoa(authString);
             const response = await axios.post(
-                "http://0.0.0.0:9876/users/login/",
+                "http://127.0.0.1:9876/users/login/",
                 {},
                 {
                     headers: {
