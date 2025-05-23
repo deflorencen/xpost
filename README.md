@@ -1,53 +1,58 @@
-## Dokumentacja projektu "XPOST"
+## Project Documentation: "XPOST"
 ___
-### 1. Temat projektu aplikacji:
-Aplikacja webowa realizująca podstawową funkcjonalność tworzenia postów. \
-A także możliwość posiadania przez użytkownika własnej przestrzeni
-do przechowywania postów.
+### 1. Project Topic:
+A web application that implements basic functionality for creating posts,
+as well as providing users with their own space to store posts.
 ___
-### 2. Opis projektu:
-Aplikacja internetowa posiada prosty i przejrzysty interfejs. \
-Posiada możliwość autoryzacji, tworzenia i usuwania postów, a także konto osobiste,\
-które zawiera tylko posty od właściciela, a także stronę z listą wszystkich postów.
+### 2. Project Description:
+The web application features a simple and user-friendly interface.
+It includes functionality for user authentication, creating and deleting posts,
+as well as a personal account that displays only the owner's posts,
+and a page with a list of all posts.
 ___
-### 3. Wymagania funkcjonalne i niefunkcjonalne:
-1. [x] Funkcjonalne:
-    - możliwość rejestracji i logowania;
-    - istniejące konto osobiste ze śledzeniem własnych postów;
-    - isuwanie postów stworzonych przez siebie przy autoryzowaniu;
-2. [x] Wymagania niefunkcjonalne:
-    - plikacja musi zapewniać szybką reakcję na interakcje użytkownika oraz płynne działanie bez opóźnień.
-    - dane osobowe użytkowników (takie jak hasła) muszą być  zaszyfrowany;
-    - kod aplikacji musi być pisany zgodnie z najlepszymi praktykami programistycznymi;
+### 3.Functional and Non-functional Requirements:
+
+✅ Functional Requirements:
+- Ability to register and log in;
+- Existing personal account with tracking of own posts;
+- Deletion of user-created posts when authenticated;
+
+✅ Non-functional Requirements:
+- Aapplication must provide a fast response to user interactions and operate smoothly without delays;
+- Users' personal data (such as passwords) must be encrypted;
+- The application code must be written according to best programming practices;
 ___
-### 4. Odbiorcy:
-Aplikacja jest bardzo prosta w obsłudze. Docelową grupą użytkowników są osoby potrzebujące prostej aplikacji dla tworzenia postów.
+### 4. Target Audience:
+The application is very easy to use.
+The target user group consists of individuals who need a simple tool for creating posts.
 ___
-### 5. Schematy i modele:
-W projekcie użyta architektura FastAPI.
+### 5. Schemas and Models:
+The project uses the FastAPI architecture.
 
 ![Shemat](https://i.imgur.com/JovICtQ.png)
 ___
-### 6. Dokumentacja API, UI:
-Cała interakcja pomiędzy klientem a API odbywa się poprzez JSON. Dodatkowo API wykorzystuje podstawową autoryzację. Dlatego prawie wszystkie punkty końcowe są prywatne i działają wyłącznie dla zarejestrowanych i autoryzowanych użytkowników.
+### 6. API and UI Documentation:
+All interaction between the client and the API takes place via JSON.
+Additionally, the API uses basic authentication.
+As a result, almost all endpoints are private and function only for registered and authenticated users.
 
 - API
-    - Router użytkowników — `/users/`
+    - User Router  — `/users/`
 
-        - `GET /users/` - `[admin only]` - Pobierz wszystkich użytkowników
-        - `POST /users/register/`- `[public]` - Zarejestruj nowych użytkowników
-        - `POST /users/login/` - `[public]` - Zaloguj się
-        - `POST /users/logout/` - `[autorization required]`- Wyloguj użytkowników
+        - `GET /users/` - `[admin only]` - Get all users
+        - `POST /users/register/`- `[public]` - Register new users
+        - `POST /users/login/` - `[public]` -  Log in
+        - `POST /users/logout/` - `[autorization required]`- Log out users
     - Artykuły Router -/articles/
-        - `GET /articles/` - `[public]` - Zdobądź wszystkie artykuły
-        - `GET /articles/by-user/` - `[autorization required]`- Pobierz artykuły według użytkownika
-        - `POST /articles/` - `[autorization required]`- Twórz nowe artykuły
-        - `DELETE /articles/{article_id}`- `[autorization required]`- Usuń artykuły
+        - `GET /articles/` - `[public]` - Retrieve all articles
+        - `GET /articles/by-user/` - `[autorization required]`- Retrieve articles by user
+        - `POST /articles/` - `[autorization required]`- Create new articles
+        - `DELETE /articles/{article_id}`- `[autorization required]`-  Delete articles
 - UI
-    - Interfejs użytkownika umożliwia dodawanie, edycję, usuwanie oraz postów.
-    - Umożliwia rejestracje i autoryzacje.
+    - The user interface allows adding, editing, and deleting posts.
+    - It also supports user registration and authentication.
 ___
-### 7. Uzasadnienie wyboru technologii:
+### 7. Justification for Technology Choice:
 - Library: React.js, Axios
 - Framework: FastAPI
 - Database ORM: SQLModel
